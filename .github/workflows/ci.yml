@@ -28,3 +28,5 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t shopease-app:${{ github.sha }} .
+      - name: Test Docker container
+        run: docker run --rm shopease-app:${{ github.sha }}
